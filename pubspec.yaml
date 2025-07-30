@@ -1,0 +1,10 @@
+name: curveauth_integration
+description: Integration tests for cross-language CurveAuth compatibility
+version: 0.1.0
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  curveauth:
+    git:
+      url: https://github.com/HayesBarber/curveauth-dart.git
