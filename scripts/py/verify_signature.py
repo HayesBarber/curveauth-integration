@@ -10,4 +10,9 @@ args = parser.parse_args()
 
 success = verify_signature(args.message, args.signature_b64, args.public_key_b64, True)
 
-sys.exit(0 if success else 1)
+if success:
+    print("Signature is valid")
+    sys.exit(0)
+else:
+    print("Signature is not valid")
+    sys.exit(1)
