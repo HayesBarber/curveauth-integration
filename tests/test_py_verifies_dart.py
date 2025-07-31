@@ -10,11 +10,8 @@ def test_dart_keypair_generation():
     output = result.stdout.strip()
     keypair_json, public_key_b64 = json.loads(output)
 
-    print(output)
-    print("-----")
-    print(keypair_json)
-    print("-----")
-    print(public_key_b64)
+    print(f"Key pair json: {keypair_json}")
+    print(f"Public key b64: {public_key_b64}")
 
     assert isinstance(keypair_json, str)
     assert isinstance(public_key_b64, str)
