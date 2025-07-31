@@ -17,6 +17,15 @@ def test_dart_keypair_generation():
     assert isinstance(public_key_b64, str)
     assert len(public_key_b64) > 0
 
+    result = subprocess.run(
+        ["python3", "scripts/py/generate_challenge.py"],
+        capture_output=True, text=True, check=True
+    )
+
+    challenge = result.stdout.strip()
+
+    print(f"Challenge: {challenge}")
+
 if __name__ == "__main__":
     test_dart_keypair_generation()
     print("All py verifies dart tests passed.")
