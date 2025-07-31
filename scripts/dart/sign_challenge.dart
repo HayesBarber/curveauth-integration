@@ -13,7 +13,9 @@ void main(List<String> args) async {
 
   late final ECCKeyPair keyPair;
   try {
-    keyPair = ECCKeyPair.fromJson(jsonDecode(jsonStr));
+    keyPair = ECCKeyPair.fromJson(
+      Map<String, String>.from(jsonDecode(jsonStr)),
+    );
   } catch (e) {
     print('Invalid keypair JSON: $e');
     exit(1);
