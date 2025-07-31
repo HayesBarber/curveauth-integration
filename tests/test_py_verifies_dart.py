@@ -27,6 +27,17 @@ def test_dart_keypair_generation():
     print(f"Challenge: {challenge}")
 
     assert isinstance(challenge, str)
+    assert len(challenge) > 0
+
+    result = subprocess.run(
+        ["dart", "scripts/dart/sign_challenge.dart", keypair_json, challenge],
+        capture_output=True, text=True, check=True
+    )
+
+    signature = result.stdout.strip()
+    print(f"Signature: {signature}")
+    assert isinstance(signature, str)
+    assert len(signature) > 0
 
 if __name__ == "__main__":
     test_dart_keypair_generation()
