@@ -26,6 +26,8 @@ def test_dart_keypair_generation():
 
     print(f"Challenge: {challenge}")
 
+    assert isinstance(challenge, str)
+
 if __name__ == "__main__":
     test_dart_keypair_generation()
     print("All py verifies dart tests passed.")
