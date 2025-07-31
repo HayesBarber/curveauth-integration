@@ -28,7 +28,6 @@ def test_dart_keypair_generation():
         capture_output=True, text=True, check=True
     )
 
-
 def test_dart_invalid_signature():
     keygen_proc = subprocess.run(
         ["dart", "scripts/dart/generate_key_pair.dart"],
