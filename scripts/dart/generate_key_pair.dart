@@ -1,8 +1,11 @@
+import 'dart:convert';
 import 'package:curveauth_dart/curveauth_dart.dart';
 
 void main() {
   final keyPair = ECCKeyPair.generate();
 
-  print(keyPair.toJson());
-  print(keyPair.exportPublicKeyRawBase64());
+  final jsonKey = jsonEncode(keyPair.toJson());
+  final pubKey = keyPair.exportPublicKeyRawBase64();
+
+  print(jsonEncode([jsonKey, pubKey]));
 }
